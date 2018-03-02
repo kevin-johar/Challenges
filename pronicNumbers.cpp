@@ -25,6 +25,7 @@ void checkPronic (int a) {
     }
     
     //The output states true/false based on if the input is a pronic number
+    //Boolalpha changes the numerical value (0 or 1) to the alphabetical value (true or false)
     cout<<a<<": "<<std::boolalpha<<(pronic==a)<<endl;
     
     return;
