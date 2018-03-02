@@ -7,32 +7,27 @@
 //
 
 #include <iostream>
+#include <cmath>
 using std::cout;
 using std::cin;
 using std::endl;
 
-void checkPronic (int a) {
-    int pronic(0);
+//Improved version of code to work without a loop
+void improvedPronic (int a) {
+    //Since i*(i+1) is almost equal to i^2, then the sqrt of i gives us the lesser
+    //of the two consecutive values.
+    int pronic = pow(a,0.5);
     
-    //Loop sifts through all values of i, where i*(i+1)=input
-    //If such a value is found the loop is exited and that value is stored in the pronic variable
-    for (int i=0 ; i<a ; i++) {
-        pronic = i*(i+1);
-        
-        if (pronic == a) {
-            break;
-        }
-    }
+    //This assigns the var pronic, the value i*(i+1)
+    pronic = pronic*(pronic+1);
     
     //The output states true/false based on if the input is a pronic number
     //Boolalpha changes the numerical value (0 or 1) to the alphabetical value (true or false)
     cout<<a<<": "<<std::boolalpha<<(pronic==a)<<endl;
-    
-    return;
 }
 
 //Function to control the continuation of the program
-bool loop (bool repeat) {
+bool loop () {
     char again;
     
     //Requests user input regarding the continuation of the program
@@ -45,15 +40,14 @@ bool loop (bool repeat) {
             return false;
             // Program continues
         default:
-            return repeat;
+            return true;
     }
 }
 
+/*This program tells the user whether their input is a pronic number or not.
+ A pronic number is one where the product of two consecutive numbers is equal to said number.
+ n = x * (x+1)*/
 int main () {
-    /*This program tells the user whether their input is a pronic number or not.
-      A pronic number is one where the product of two consecutive numbers is equal to said number.
-      n = x * (x+1)*/
-    
     //Variable Declaration
     int input;
     bool repeat = true;
@@ -65,11 +59,11 @@ int main () {
         cout<<"\nPlease enter an integer: ";
         cin>>input;
         
-        //Calls the function to check if the input is a pronic number
-        checkPronic(input);
+        //Calls the improved function to check if the input is a pronic number
+        improvedPronic(input);
         
         //Calls function to ask user if they'd like to exit the program and assigns respective value to infinite loop control variable
-        repeat = loop(repeat);
+        repeat = loop();
         
     }
     
