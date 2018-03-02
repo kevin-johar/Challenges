@@ -1,0 +1,79 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf200
+{\fonttbl\f0\fnil\fcharset0 Menlo-Bold;\f1\fswiss\fcharset0 Helvetica;\f2\fnil\fcharset0 Menlo-Regular;
+}
+{\colortbl;\red255\green255\blue255;\red69\green187\blue62;\red31\green32\blue41;\red69\green187\blue62;
+\red69\green187\blue62;}
+{\*\expandedcolortbl;;\csgenericrgb\c26985\c73392\c24249;\csgenericrgb\c12157\c12549\c16078;\cspthree\c44234\c75535\c36855;
+\cspthree\c44234\c75535\c36855;}
+\margl1440\margr1440\vieww28600\viewh18000\viewkind0
+\deftab593
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
+
+\f0\b\fs96 \cf2 \cb3 Learning Points
+\f1\b0\fs24 \cf0 \
+
+\f2 \cf2  ___________________________________________________________________________________________________\
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
+
+\f1 \cf0 \
+
+\fs72 \cf4 	
+\b February 26, 2018\
+
+\fs48 	Modular Arithmetic
+\b0 \
+
+\fs28 	If you want to separate an integer into its individual digits, it can be done through modular arithmetic.\
+\
+	Before we begin, the modern approach to modular arithmetic was developed by Carl Friedrich Gauss.\
+	It is essentially a system of integers that wrap around once reaching a certain value.\
+\
+	Ex. The clock wraps around once reaching 12 hours, so if it was 7:00am and we added 8 hours\
+	we would get 3:00pm not 15:00. \
+\
+	Now to separate an integer into it\'92s individual digits.\
+	\
+	Let\'92s use the value 12345 as example\
+\
+	The way to separate these into individual values is to use the modulus operator in your program,\
+	by a factor of 10.\
+\
+	12345%10\
+\
+	This would give us any value in the ones column (as anything above the 10\'92s columns is fully divisible by 10.\
+	\
+	So now we have the first digit of the integer which we can store into a variable, let\'92s call it\'85\
+	\
+	 \'91digit1\'92\
+\
+	if we divide 12345 by 10 we would truncate the decimal value or the remainder leaving us with just 1234.\
+\
+	We can now apply the modulus of 10 to this value to get the next value in the integer storing it in another variable\
+	or even an array.\
+\
+	This process can be repeated until the integer divided by 10 = 0\
+\
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
+
+\f2\fs24 \cf2  ___________________________________________________________________________________________________
+\f1\fs28 \cf4   \
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
+
+\fs72 \cf5 \cb3 	
+\b March 1st, 2018\
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
+
+\fs48 \cf5 \cb3 	std::boolalpha
+\b0 \
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
+
+\fs28 \cf5 \cb3 	std::boolalpha allows us to convert numerical values to the alphabetical equivalent to their boolean values.\
+\
+	Ex. 1, 2, 3, 4\'85 -> true 				0 -> false\
+	\
+	If you apply std::boolalpha before a value in a cout statement it converts that numerical value to the alphabetical value.
+\fs72 \cf4 \cb3 \
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
+
+\fs24 \cf0 \
+}
