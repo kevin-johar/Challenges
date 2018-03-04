@@ -1,10 +1,10 @@
 {\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf200
 {\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 Menlo-Regular;}
 {\colortbl;\red255\green255\blue255;\red31\green32\blue41;\red69\green187\blue62;\red33\green255\blue6;
-\red69\green187\blue62;}
+\red69\green187\blue62;\red69\green187\blue62;}
 {\*\expandedcolortbl;;\csgenericrgb\c12157\c12549\c16078;\cspthree\c44234\c75535\c36855;\cssrgb\c0\c97680\c0;
-\csgenericrgb\c26985\c73392\c24249;}
-\margl1440\margr1440\vieww28600\viewh15180\viewkind0
+\csgenericrgb\c26985\c73392\c24249;\cspthree\c44234\c75535\c36855;}
+\margl1440\margr1440\vieww14160\viewh18000\viewkind0
 \deftab593
 \pard\tx593\pardeftab593\pardirnatural\partightenfactor0
 
@@ -13,48 +13,48 @@
 
 \fs96 \cf3 Pronic Numbers: Efficiency Iteration\
 
-\fs48 March 1st, 2018\
+\fs48  March 1st, 2018\
 
 \fs24 \cf4 \
 \pard\tx593\pardeftab593\pardirnatural\partightenfactor0
 
-\f1 \cf5 FIRST ITERATION\
-_______________________________________________________________\
-At first I had used a loop to sift through all possible values \
-of i*(i+1) -> (j = i + 1)\
+\f1 \cf5  FIRST ITERATION\
+ _______________________________________________________________\
+ At first I had used a loop to sift through all possible values \
+ of i*(i+1) -> (j = i + 1)\
 \
-where j would go up to the value of the user\'92s input. \
-Essentially trying out all possible solutions, until a value of \
-i and j was found to satisfy the definition of a pronic number.\
+ where j would go up to the value of the user\'92s input. \
+ Essentially trying out all possible solutions, until a value of \
+ i and j was found to satisfy the definition of a pronic number.\
 \
-This proved to be very inefficient as larger numbers would \
-require much more processing power and runtime.\
-_______________________________________________________________\
+ This proved to be very inefficient as larger numbers would \
+ require much more processing power and runtime.\
+ _______________________________________________________________\
 \
 \
 \pard\tx593\pardeftab593\pardirnatural\partightenfactor0
 
-\f0\fs48 \cf3 March 2nd, 2018
+\f0\fs48 \cf3  March 2nd, 2018
 \f1\fs24 \cf5 \
-SECOND ITERATION\
-_______________________________________________________________\
-The second iteration considers a property of the definition \
-of a pronic number.\
+ SECOND ITERATION\
+ _______________________________________________________________\
+ The second iteration considers a property of the definition \
+ of a pronic number.\
 \
-pronic number = i*(i+1) which is very close to being = i^2\
+ pronic number = i*(i+1) which is very close to being = i^2\
 \
-This means if you square-root the pronic number you will get a \
-value close to the value of \'91i\'92. If you use the floor function \
-(get rid of the decimals, you will now have an int who\'92s \
-product with the consecutive value should provide the \
-condition to check if the user\'92s input is a pronic number \
-or not.\
-_______________________________________________________________\
+ This means if you square-root the pronic number you will get a \
+ value close to the value of \'91i\'92. If you use the floor function \
+ (get rid of the decimals, you will now have an int who\'92s \
+ product with the consecutive value should provide the \
+ condition to check if the user\'92s input is a pronic number \
+ or not.\
+ _______________________________________________________________\
 
 \f0\fs96 \cf3 \
 JOSEPHUS PROBLEM: Code Explained\
 
-\fs48 March 2nd, 2018
+\fs48  March 2nd, 2018
 \fs24 \cf4 \
 \pard\tx593\pardeftab593\pardirnatural\partightenfactor0
 \cf0 \
@@ -171,7 +171,81 @@ JOSEPHUS PROBLEM: Code Explained\
 \f1 \cf5  [2*(N-V)]-1 -> Answer to the problem, remembering the answers increase by 2
 \f0 \cf0 \
 
-\f1 \cf5  ____________________________________________________________________________________
+\f1 \cf5  ____________________________________________________________________________________\
+\
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
+
+\f0\fs96 \cf3 \
+\cf6 Ugly Numbers: Code Explained\
+
+\fs48  March 3rd, 2018\
+
+\fs24 \cf6 \
+
+\f1  An ugly number is one with the only prime factors being 2, 3 and 5 (relevant prime factors).\
+ This code is separated into two sections, the organization and flow structure in the main \
+ function. Second is the calculation or algorithm part in the expCalc function.\
+\
+  \
+\
+ expCALC FUNCTION EXPLAINED\
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
+\cf5  ____________________________________________________________________________________\
+ The equation that defines an ugly number is U = 2^a * 3^b * 5^c which basically \
+ translates to meaning ugly numbers are a product of some combination of 2, 3 and 5.\
+\
+ \ul STEP 1:\ulnone \
+ In terms of creating an algorithm this piece of information is very useful. The first\
+ step to solving this problem would be to check if 2, 3 or 5 factors into the user \
+ inputed numerical value. \
+\
+ Logically this would be accomplished by using the modulus operator.\
+ Ex. Let input represent the value the user inputs \
+\
+	if \
+	(input%2)==0\
+	(input%3)==0\
+	(input%5)==0\
+	\
+\pard\tx0\pardeftab593\li579\fi-580\pardirnatural\partightenfactor0
+\cf5 	then the respective number (2,3,5) is a factor of the input value. \
+\
+ If none of the 3 relevant prime factors are factors of the input value we know it\'92s\
+ not an ugly number. \
+\
+\
+\ul  STEP 2:\
+\ulnone  Next we want to check how many times each relevant prime factor (2,3,5) individually\
+ can be completed divided into a number.\
+\
+ Ex. 25, 25/5 = 5 -> 5/5 = 1 | 25%5 = 0 -> 5%5 = 0\
+\
+ This means 5 goes into 25, 2 times.\
+\
+ In terms of the equation [U = 2^a * 3^b * 5^c] it would mean c = 2, since 3 and 2 \
+ aren\'92t factors of 25, a and b would equal to 0.\
+\
+ This is actually the basis of this algorithm. Using the modulus operator to determine\
+ whether 2, 3 or 5 is a factor of the input individually, and how many times. \
+ Using the division operator and then testing using modulus once again.\
+\
+ This is a loop structure that can continuously check how many times 2, 3 and 5 go into\
+ the inputted value and keep a count each time, assigning the respective value to\
+ a,b or c. \
+\
+\ul  STEP 3:\
+\ulnone  Final step would be to apply the a,b and c values to the equation \
+\
+ [U = 2^a * 3^b * 5^c]\
+\
+ and see if the inputed value is equal to this calculated value.\
+\
+ If the calculated value is equal to the input, then that means all factors are covered\
+ and 2,3 or 5 are the only prime factors. If the two values aren\'92t equal then it means\
+ a factor other than 2,3 or 5 is missing and therefore deems the inputted value as \
+ not being an ugly number.\
+\pard\tx593\pardeftab593\pardirnatural\partightenfactor0
+\cf5  ____________________________________________________________________________________
 \f0 \cf0 \
 \
 }
